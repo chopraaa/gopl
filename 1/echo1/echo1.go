@@ -27,14 +27,24 @@ import (
 // And then the declarations of the program that are stored in that file
 // The function main() is special - it's where execution of the program begins
 func main() {
+        // Declare two variables "s" and "sep" of type string. A variable can be
+        // intialized as part of it's declaration. Here, we implicityly intialize
+        // "s" and "sep" to empty strings
         var s, sep string
         // The variable os.Args is a slice of strings.
         // The first element of os.Args, os.Args[0] is the name of the command itself
         // The other elements of are the arguments that were presented to the program
         // when it started execution
+
+        // The "for" loop is the only loop statement in Go. It has a number of forms, one of which is illustrated here:
+        // for intialiation; condition; post {
+        //     // zero or more statements
+        // }
+        // Creates a string "s" that adds args from os.Args as it increments
+        // First iteration: arg1, second iteration: arg1 arg2 and so on...
         for i := 1; i < len(os.Args); i++ {
-                // Creates a string "s" that adds args from os.Args as it increments
-                // First iteration: arg1, second iteration: arg1 arg2 and so on...
+                // For numbers, Go provides the usual arithmetic and logical operators
+                // When applied to strings however, the + operator concatenates the values
                 s += sep + os.Args[i]
                 sep = " "
         }
